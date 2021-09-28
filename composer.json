@@ -7,15 +7,16 @@
     "password generator",
     "security"
   ],
+  "type": "library",
+  "homepage": "https://ph7.me",
   "license": "MIT",
   "authors": [
     {
       "name": "Pierre-Henry Soria",
-      "email": "hi@ph7.me"
+      "email": "hi@ph7.me",
+      "homepage": "https://github.com/pH-7"
     }
   ],
-  "homepage": "https://ph7.me",
-  "type": "library",
   "require": {
     "php": ">=5.6.0"
   },
