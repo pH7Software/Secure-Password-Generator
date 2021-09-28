@@ -10,6 +10,7 @@ namespace PH7\Generator;
 class Password
 {
     const DEFAULT_LENGTH = 12;
+    const SPECIAL_CHARACTERS = ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'];
 
     /**
      * Generate password.
@@ -21,12 +22,11 @@ class Password
     public static function generate($iLength)
     {
         $sWord = '';
-        $aSpecialChars = ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'];
         $aKeys = array_merge(
             range(0, 9),
             range('a', 'z'),
             range('Z', 'Z'),
-            $aSpecialChars
+            self::SPECIAL_CHARACTERS
         );
 
         for ($iAmount = 0; $iAmount < $iLength; $iAmount++) {
