@@ -8,7 +8,7 @@ A simple way to generate random passwords
 ## 🛠 Installation (with Composer)
 
 ```bash
-composer require ph-7/password-generator
+composer require ph7software/secure-password-generator
 ```
 
 ## 🛠 Server Requirement
