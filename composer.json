@@ -14,8 +14,8 @@
       "email": "hi@ph7.me"
     }
   ],
-  "type": "library",
   "homepage": "https://ph7.me",
+  "type": "library",
   "require": {
     "php": ">=5.6.0"
   },
