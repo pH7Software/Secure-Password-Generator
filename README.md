@@ -24,6 +24,14 @@ use PH7\Generator\Password;
 echo Password::generate(10); // Generate a 10 length password
 ````
 
+By default, the password will contain special characters. You can disable them by mentioning the second argument to `false`
+```php
+use PH7\Generator\Password;
+
+// The password won't contain any special characters such as -, _, ~, |, %, ^, !, $, #, @, and ?
+echo Password::generate(Password::DEFAULT_LENGTH, false);
+````
+
 You can use the public constant `Password::DEFAULT_LENGTH` which contains `12` as the default value
 
 ```php

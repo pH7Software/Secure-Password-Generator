@@ -16,17 +16,20 @@ class Password
      * Generate password.
      *
      * @param int $iLength
+     * @param bool $bSpecialCharacters
      *
      * @return string
      */
-    public static function generate($iLength)
+    public static function generate($iLength = self::DEFAULT_LENGTH, $bSpecialCharacters = true)
     {
         $sWord = '';
+        $aSpecialChars = $bSpecialCharacters ? self::SPECIAL_CHARACTERS : [];
+
         $aKeys = array_merge(
             range(0, 9),
             range('a', 'z'),
             range('Z', 'Z'),
-            self::SPECIAL_CHARACTERS
+            $aSpecialChars
         );
 
         for ($iAmount = 0; $iAmount < $iLength; $iAmount++) {
