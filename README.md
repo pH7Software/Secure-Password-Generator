@@ -21,7 +21,7 @@ composer require ph7software/secure-password-generator
 ```php
 use PH7\Generator\Password;
 
-echo Password::generate(10); // Generate a 10 length password
+echo Password::generate(10); // Generate a 10-length password
 ````
 
 
@@ -35,21 +35,21 @@ echo Password::generate(Password::DEFAULT_LENGTH, false);
 ````
 
 
-You can use the public constant `Password::DEFAULT_LENGTH` which contains `12` as the default value
+You can use the constant `Password::DEFAULT_LENGTH` which contains `12` as the default value
 
 ```php
 use PH7\Generator\Password;
 
-// By default, it generates a 12 length password
+// By default, it generates a 12-length password
 echo Password::generate(Password::DEFAULT_LENGTH);
 ````
 
-Without argument, the function will generate a 12-character password.
+Without argument, the function will also generate a 12-character password.
 
 ```php
 use PH7\Generator\Password;
 
-// By default, it generates a 12 length password
+// By default, it generates a 12-length password
 echo Password::generate();
 ````
 
