@@ -53,6 +53,12 @@ final class PasswordTest extends PHPUnit_Framework_TestCase
         $sPassword = Password::generate(Password::DEFAULT_LENGTH, false);
 
         $this->assertSame(Password::DEFAULT_LENGTH, strlen($sPassword));
-        $this->assertFalse(in_array($sPassword, ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'], true));
+        $this->assertFalse(
+            in_array(
+                $sPassword,
+                ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'],
+                true
+            )
+        );
     }
 }
