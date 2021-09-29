@@ -8,9 +8,9 @@
 namespace PH7\Generator\Test\Unit;
 
 use PH7\Generator\Password;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-final class PasswordTest extends PHPUnit_Framework_TestCase
+final class PasswordTest extends TestCase
 {
     public function testPasswordWithSpecifiedLength()
     {

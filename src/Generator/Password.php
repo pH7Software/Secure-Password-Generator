@@ -7,7 +7,7 @@
 
 namespace PH7\Generator;
 
-class Password
+final class Password
 {
     const DEFAULT_LENGTH = 12;
     const SPECIAL_CHARACTERS = ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'];
