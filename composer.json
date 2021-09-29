@@ -10,6 +10,7 @@
   "type": "library",
   "homepage": "https://ph7.me",
   "license": "MIT",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Pierre-Henry Soria",

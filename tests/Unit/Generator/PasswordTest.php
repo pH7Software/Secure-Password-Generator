@@ -12,7 +12,7 @@ use PHPUnit_Framework_TestCase;
 
 final class PasswordTest extends PHPUnit_Framework_TestCase
 {
-    public function testPasswordLength()
+    public function testPasswordWithSpecifiedLength()
     {
         $iLength = 8;
         $sPassword = Password::generate($iLength);
@@ -20,10 +20,33 @@ final class PasswordTest extends PHPUnit_Framework_TestCase
         $this->assertSame($iLength, strlen($sPassword));
     }
 
+    public function testPasswordWithDefaultLength()
+    {
+        $sPassword = Password::generate();
+
+        $this->assertSame(Password::DEFAULT_LENGTH, strlen($sPassword));
+    }
+
     public function testPasswordIsString()
     {
         $sPassword = Password::generate();
 
         $this->assertTrue(is_string($sPassword));
+    }
+
+    public function testPasswordWithSpecialCharacters()
+    {
+        $sPassword = Password::generate(Password::DEFAULT_LENGTH, true);
+
+        $this->assertSame(Password::DEFAULT_LENGTH, strlen($sPassword));
+        $this->assertTrue(in_array($sPassword, ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'], true));
+    }
+
+    public function testPasswordWithoutSpecialCharacters()
+    {
+        $sPassword = Password::generate(Password::DEFAULT_LENGTH, false);
+
+        $this->assertSame(Password::DEFAULT_LENGTH, strlen($sPassword));
+        $this->assertFalse(in_array($sPassword, ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'], true));
     }
 }

@@ -23,13 +23,11 @@ class Password
     public static function generate($iLength = self::DEFAULT_LENGTH, $bSpecialCharacters = true)
     {
         $sWord = '';
-        $aSpecialChars = $bSpecialCharacters ? self::SPECIAL_CHARACTERS : [];
-
         $aKeys = array_merge(
             range(0, 9),
             range('a', 'z'),
             range('Z', 'Z'),
-            $aSpecialChars
+            $bSpecialCharacters ? self::SPECIAL_CHARACTERS : []
         );
 
         for ($iAmount = 0; $iAmount < $iLength; $iAmount++) {
