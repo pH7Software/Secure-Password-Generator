@@ -39,13 +39,7 @@ final class PasswordTest extends TestCase
         $sPassword = Password::generate(Password::DEFAULT_LENGTH, true);
 
         $this->assertSame(Password::DEFAULT_LENGTH, strlen($sPassword));
-        $this->assertTrue(
-            in_array(
-                $sPassword,
-                ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'],
-                true
-            )
-        );
+        $this->assertTrue($this->doesContainSpecialChars($sPassword));
     }
 
     public function testPasswordWithoutSpecialCharacters()
@@ -53,12 +47,23 @@ final class PasswordTest extends TestCase
         $sPassword = Password::generate(Password::DEFAULT_LENGTH, false);
 
         $this->assertSame(Password::DEFAULT_LENGTH, strlen($sPassword));
-        $this->assertFalse(
-            in_array(
-                $sPassword,
-                ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'],
-                true
-            )
-        );
+        $this->assertFalse($this->doesContainSpecialChars($sPassword));
+    }
+
+    /**
+     * @param string $sPassword
+     *
+     * @return bool
+     */
+    private function doesContainSpecialChars($sPassword)
+    {
+        $aSpecialChars = ['-', '_', '~', '|', '%', '^', '!', '$', '#', '@', '?'];
+
+        foreach (str_split($sPassword) as $sCharacter) {
+            if (in_array($sCharacter, $aSpecialChars, true)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
