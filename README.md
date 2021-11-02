@@ -13,7 +13,7 @@ composer require ph7software/secure-password-generator
 
 ## 🛠 Server Requirement
 
-* [PHP 5.6](https://php.net/releases/5_6_0.php) or higher 🐘
+* **[PHP 5.6](https://php.net/releases/5_6_0.php)** or higher 🎉
 
 
 ## 🎮 Usage
