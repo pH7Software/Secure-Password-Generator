@@ -2,7 +2,7 @@
 
 ## 📄 Description
 
-A simple way to generate random passwords
+A simple way to generate random cryptographically secure passwords.
 
 
 ## 🛠 Installation (with Composer)
