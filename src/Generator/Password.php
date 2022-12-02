@@ -30,8 +30,10 @@ final class Password
             $bSpecialCharacters ? self::SPECIAL_CHARACTERS : []
         );
 
+
+        $iEndKeyIndex = count($aKeys) - 1;
         for ($iAmount = 0; $iAmount < $iLength; $iAmount++) {
-            $sWord .= $aKeys[array_rand($aKeys)];
+            $sWord .= $aKeys[random_int(0, $iEndKeyIndex)];
         }
 
         return $sWord;
