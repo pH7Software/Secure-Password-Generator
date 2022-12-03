@@ -32,5 +32,8 @@
     "psr-4": {
       "PH7\\": "src"
     }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
   }
 }
