@@ -32,7 +32,7 @@ jobs:
       - name: Validate Composer json/lock
         run: composer validate --strict
 
-      ## Composer & Cache ##
+      ## Cache & Composer ##
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
